@@ -11,6 +11,6 @@ jobs:
       - name: Render Video
         uses: andrewmarklloyd/pi-app-deployer-action@main
         with:
-        fileName: MovingAround.py
-        className: MovingAround
-        repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
+          fileName: MovingAround.py
+          className: MovingAround
+          repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
