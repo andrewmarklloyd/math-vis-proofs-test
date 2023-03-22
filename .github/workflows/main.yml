@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Render Video
-        uses: andrewmarklloyd/pi-app-deployer-action@main
+        uses: andrewmarklloyd/math-visual-proofs-action@main
         with:
           fileName: MovingAround.py
           className: MovingAround
