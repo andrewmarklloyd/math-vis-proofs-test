@@ -1,0 +1,16 @@
+name: Main
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Render Video
+        uses: andrewmarklloyd/pi-app-deployer-action@main
+        with:
+        fileName: MovingAround.py
+        className: MovingAround
+        repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
