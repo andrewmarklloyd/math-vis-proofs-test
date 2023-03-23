@@ -6,8 +6,12 @@ on:
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
+    env:
+      GOPRIVATE=github.com/andrewmarklloyd/math-visual-proofs
+      GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v3
+      - run: git config --global url.https://$GH_ACCESS_TOKEN@github.com/.insteadOf https://github.com/
       - name: Render Video
         uses: andrewmarklloyd/math-visual-proofs-action@main
         with:
