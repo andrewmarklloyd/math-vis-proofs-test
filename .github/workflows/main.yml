@@ -6,13 +6,14 @@ on:
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
-    env:
-      GOPRIVATE: github.com/andrewmarklloyd/math-visual-proofs
-      GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: Render Video
         uses: andrewmarklloyd/math-visual-proofs-action@main
+        env:
+          CLOUDMQTT_MATH_PROOFS_AGENT_USER: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_USER }}
+          CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD }}
+          CLOUDMQTT_URL: ${{ secrets.CLOUDMQTT_URL }}
         with:
           fileName: MovingAround.py
           className: MovingAround
