@@ -1,11 +1,10 @@
 from manim import *
 
-f = open("/tmp/hello.txt", "a")
-f.write("testing!")
-f.close()
-
 class MovingAround(Scene):
     def construct(self):
+        f = open("/tmp/hello.txt", "a")
+        f.write("testing!")
+        f.close()
         square = Square(color=BLUE, fill_opacity=1)
 
         self.play(square.animate.shift(LEFT))
