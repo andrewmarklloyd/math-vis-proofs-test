@@ -15,6 +15,6 @@ jobs:
           CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD }}
           CLOUDMQTT_URL: ${{ secrets.CLOUDMQTT_URL }}
         with:
-          fileName: MovingAround.py
+          fileName: MovingAround.p
           className: MovingAround
           repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
