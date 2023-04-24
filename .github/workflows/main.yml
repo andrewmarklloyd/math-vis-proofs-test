@@ -8,13 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Render Video
-        uses: andrewmarklloyd/math-visual-proofs-action@main
-        env:
-          CLOUDMQTT_MATH_PROOFS_AGENT_USER: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_USER }}
-          CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD }}
-          CLOUDMQTT_URL: ${{ secrets.CLOUDMQTT_URL }}
+      - name: Get all changed *.py file(s)
+        id: changed-files
+        uses: tj-actions/changed-files@v35
         with:
-          fileName: MovingAround.py
-          className: MovingAround
-          repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
+          files: |
+            **/*.py
+      - name: Run step if any *.js file(s) or any file in the static folder change
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "One or more *.js file(s) or any file in the static folder but not in the doc folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files.outputs.all_changed_files }}"
+      # - name: Render Video
+      #   uses: andrewmarklloyd/math-visual-proofs-action@main
+      #   env:
+      #     CLOUDMQTT_MATH_PROOFS_AGENT_USER: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_USER }}
+      #     CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD: ${{ secrets.CLOUDMQTT_MATH_PROOFS_AGENT_PASSWORD }}
+      #     CLOUDMQTT_URL: ${{ secrets.CLOUDMQTT_URL }}
+      #   with:
+      #     fileName: MovingAround.py
+      #     className: MovingAround
+      #     repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
