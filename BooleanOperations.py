@@ -33,3 +33,4 @@ class BooleanOperations(Scene):
         difference_text.next_to(d, UP)
         self.play(FadeIn(difference_text))
 
+
