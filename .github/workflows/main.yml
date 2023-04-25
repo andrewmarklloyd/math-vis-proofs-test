@@ -24,3 +24,4 @@ jobs:
         with:
           fileNames: "${{ steps.changed-files.outputs.all_changed_files }}"
           repoURL: https://github.com/andrewmarklloyd/math-vis-proofs-test.git
+          githubSHA: ${{ github.sha }}
