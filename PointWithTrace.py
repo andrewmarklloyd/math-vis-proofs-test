@@ -16,3 +16,4 @@ class PointWithTrace(Scene):
         self.play(dot.animate.shift(UP))
         self.play(dot.animate.shift(LEFT))
         self.wait()
+

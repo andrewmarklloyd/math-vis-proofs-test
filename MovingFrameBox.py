@@ -17,3 +17,4 @@ class MovingFrameBox(Scene):
             ReplacementTransform(framebox1,framebox2),
         )
         self.wait()
+
