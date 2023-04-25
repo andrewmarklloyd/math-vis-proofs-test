@@ -18,3 +18,4 @@ class PointWithTrace(Scene):
         self.wait()
 
 
+
