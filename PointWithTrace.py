@@ -30,3 +30,4 @@ class PointWithTrace(Scene):
 
 
 
+
