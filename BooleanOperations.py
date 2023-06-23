@@ -34,36 +34,3 @@ class BooleanOperations(Scene):
         self.play(FadeIn(difference_text))
 
 # test update
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
